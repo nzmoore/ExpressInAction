@@ -1,0 +1,9 @@
+{
+  "name": "BillsFunProject",
+  "author": "Bill Moore",
+  "private": "true",
+  "version": "0.1.0",
+  "dependencies": {
+    "mustache": "^2.3.0"
+  }
+}
