@@ -1,0 +1,8 @@
+{
+  "name": "Hi-There",
+  "author": "Bill Moore",
+  "private": true,
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
