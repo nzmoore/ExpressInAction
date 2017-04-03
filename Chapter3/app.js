@@ -8,8 +8,12 @@ var app = express();
 app.use(reqLogger("short"));
 
 var publicPath = path.resolve(__dirname, "public");
-console.log(publicPath);
+//console.log(publicPath);
 app.use(express.static(publicPath));
+
+var viewDir = path.resolve(__dirname, "views");
+app.set("views", viewDir);
+app.set("view engine", "ejs");
 
 app.get("/", function (request, response) {
     response.end("Welcome to the home page");
@@ -17,6 +21,12 @@ app.get("/", function (request, response) {
 
 app.get("/about", function (request, response) {
     response.end("Whats it all about");
+});
+
+app.get("/ejs", function (request, response) {
+    response.render("index", {
+      message: "Seeing is believing"
+    });
 });
 
 app.get("/weather", function (request, response) {
