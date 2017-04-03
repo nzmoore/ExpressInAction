@@ -3,6 +3,7 @@
   "author": "Bill Moore",
   "private": true,
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "morgan": "^1.8.1"
   }
 }
