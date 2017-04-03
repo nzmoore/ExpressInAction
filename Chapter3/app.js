@@ -23,10 +23,13 @@ app.get("/weather", function (request, response) {
     response.end("You always take the weather with you");
 });
 
+app.get("/hello/:who", function (request, response) {
+    response.end("Hello there " + request.params.who + ".");
+});
+
 app.use(function (request, response) {
     response.statusCode = 404;
     response.end("Page not found");
 });
-
 
 http.createServer(app).listen(3000);
