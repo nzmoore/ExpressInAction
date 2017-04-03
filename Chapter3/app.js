@@ -1,14 +1,16 @@
 var express = require("express");
 var http = require("http");
-var logger = require("morgan");
+var path = require("path");
 
 var app = express();
 
-app.use(logger("short"));
+var publicPath = path.resolve(__dirname, "public");
+console.log(publicPath);
+app.use(express.static(publicPath));
 
 app.use(function (request, response) {
     response.writeHead(200, {"Content-Type": "text/plain" });
-    response.end("Hi there again with Morgan logging");
+    response.end("Did you find a static file");
 })
 
 http.createServer(app).listen(3000);
