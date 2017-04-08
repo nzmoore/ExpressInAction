@@ -1,0 +1,7 @@
+{
+  "name": "timezone",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  }
+}

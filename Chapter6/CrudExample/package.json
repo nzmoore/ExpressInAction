@@ -1,0 +1,10 @@
+{
+  "name": "what-HTTP-method",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
