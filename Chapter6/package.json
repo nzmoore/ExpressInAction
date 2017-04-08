@@ -1,0 +1,13 @@
+{
+  "name": "random-number-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Given a minimum and maximum value return a random number in that range and return JSON",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Bill Moore",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
