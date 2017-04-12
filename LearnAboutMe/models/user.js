@@ -16,9 +16,9 @@ userSchema.methods.name = function () {
 
 var noop = function () {};
 
-userSchema.pre("save", function done() {
+userSchema.pre("save", function (done) {
   var user = this;
-  if (userIsModified("password")) {
+  if (!user.isModified("password")) {
     return done();
   }
 
@@ -27,13 +27,13 @@ userSchema.pre("save", function done() {
     bcrypt.hash(user.password, salt, noop, function (err, hashedPassword) {
       if (err) { return done(err); }
       user.password = hashedPassword;
-      return done();
+      done();
     });
   });
 });
 
 userSchema.methods.checkPassword = function ( guess, done) {
-  bcrypt.compar(guess, this.password, function  (err, isMatch) {
+  bcrypt.compare(guess, this.password, function  (err, isMatch) {
     done(err, isMatch);
   });
 };
